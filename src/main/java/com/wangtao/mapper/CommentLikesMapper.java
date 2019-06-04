@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.CommentLikesRecord;
+import com.wangtao.model.CommentLikesRecord;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

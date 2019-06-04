@@ -1,17 +1,17 @@
 package com.wangtao.controller;
 
-import com.zhy.model.FriendLink;
-import com.zhy.model.Result;
-import com.zhy.redis.StringRedisServiceImpl;
-import com.zhy.service.*;
-import com.zhy.utils.ResultUtil;
+import com.wangtao.model.FriendLink;
+import com.wangtao.model.Result;
+import com.wangtao.redis.StringRedisServiceImpl;
+import com.wangtao.service.*;
+import com.wangtao.util.ResultUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 
 /**
@@ -22,25 +22,25 @@ import java.security.Principal;
 @RestController
 public class SuperAdminControl {
 
-    @Autowired
+    @Resource
     PrivateWordService privateWordService;
-    @Autowired
+    @Resource
     FeedBackService feedBackService;
-    @Autowired
+    @Resource
     VisitorService visitorService;
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     ArticleService articleService;
-    @Autowired
+    @Resource
     ArticleLikesRecordService articleLikesRecordService;
-    @Autowired
+    @Resource
     StringRedisServiceImpl stringRedisService;
-    @Autowired
+    @Resource
     CategoryService categoryService;
-    @Autowired
+    @Resource
     FriendLinkService friendLinkService;
-    @Autowired
+    @Resource
     RedisService redisService;
 
     /**

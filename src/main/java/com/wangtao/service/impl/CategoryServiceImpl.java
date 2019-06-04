@@ -1,14 +1,14 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.CategoryMapper;
-import com.zhy.model.Categories;
-import com.zhy.service.ArticleService;
-import com.zhy.service.CategoryService;
+import com.wangtao.mapper.CategoryMapper;
+import com.wangtao.model.Categories;
+import com.wangtao.service.ArticleService;
+import com.wangtao.service.CategoryService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,9 +19,9 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
+    @Resource
     CategoryMapper categoryMapper;
-    @Autowired
+    @Resource
     ArticleService articleService;
 
     @Override

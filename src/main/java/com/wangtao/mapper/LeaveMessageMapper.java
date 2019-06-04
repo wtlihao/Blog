@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.LeaveMessage;
+import com.wangtao.model.LeaveMessage;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

@@ -1,13 +1,14 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.TagMapper;
-import com.zhy.model.Tag;
-import com.zhy.service.TagService;
+import com.wangtao.mapper.TagMapper;
+import com.wangtao.model.Tag;
+import com.wangtao.service.TagService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ import java.util.List;
 @Service
 public class TagServiceImpl implements TagService {
 
-    @Autowired
+    @Resource
     TagMapper tagMapper;
 
     @Override

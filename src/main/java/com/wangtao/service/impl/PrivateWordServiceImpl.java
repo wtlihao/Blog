@@ -2,16 +2,16 @@ package com.wangtao.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhy.mapper.PrivateWordMapper;
-import com.zhy.model.PrivateWord;
-import com.zhy.service.PrivateWordService;
-import com.zhy.service.UserService;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.mapper.PrivateWordMapper;
+import com.wangtao.model.PrivateWord;
+import com.wangtao.service.PrivateWordService;
+import com.wangtao.service.UserService;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +23,9 @@ import java.util.List;
 @Service
 public class PrivateWordServiceImpl implements PrivateWordService {
 
-    @Autowired
+    @Resource
     private PrivateWordMapper privateWordMapper;
-    @Autowired
+    @Resource
     UserService userService;
 
     @Override

@@ -1,16 +1,16 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.VisitorMapper;
-import com.zhy.model.Result;
-import com.zhy.service.RedisService;
-import com.zhy.service.VisitorService;
-import com.zhy.utils.ResultUtil;
+import com.wangtao.mapper.VisitorMapper;
+import com.wangtao.model.Result;
+import com.wangtao.service.RedisService;
+import com.wangtao.service.VisitorService;
+import com.wangtao.util.ResultUtil;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -23,9 +23,9 @@ public class VisitorServiceImpl implements VisitorService {
 
     private Logger logger = LoggerFactory.getLogger(VisitorServiceImpl.class);
 
-    @Autowired
+    @Resource
     VisitorMapper visitorMapper;
-    @Autowired
+    @Resource
     RedisService redisService;
 
     @Override

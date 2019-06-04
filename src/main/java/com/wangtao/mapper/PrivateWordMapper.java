@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.PrivateWord;
+import com.wangtao.model.PrivateWord;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

@@ -2,16 +2,16 @@ package com.wangtao.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhy.mapper.FeedBackMapper;
-import com.zhy.model.FeedBack;
-import com.zhy.service.FeedBackService;
-import com.zhy.service.UserService;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.mapper.FeedBackMapper;
+import com.wangtao.model.FeedBack;
+import com.wangtao.service.FeedBackService;
+import com.wangtao.service.UserService;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,9 +22,9 @@ import java.util.List;
 @Service
 public class FeedBackServiceImpl implements FeedBackService {
 
-    @Autowired
+    @Resource
     FeedBackMapper feedBackMapper;
-    @Autowired
+    @Resource
     UserService userService;
 
     @Override

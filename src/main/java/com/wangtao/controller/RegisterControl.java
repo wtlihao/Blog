@@ -1,14 +1,15 @@
 package com.wangtao.controller;
 
-import com.zhy.model.User;
-import com.zhy.redis.StringRedisServiceImpl;
-import com.zhy.service.UserService;
-import com.zhy.utils.MD5Util;
+import com.wangtao.model.User;
+import com.wangtao.redis.StringRedisServiceImpl;
+import com.wangtao.service.UserService;
+import com.wangtao.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -19,15 +20,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class RegisterControl {
 
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     StringRedisServiceImpl stringRedisService;
 
     @PostMapping("/register")
     @ResponseBody
     public String register(User user,
-                            HttpServletRequest request){
+                           HttpServletRequest request){
 
         String authCode = request.getParameter("authCode");
 

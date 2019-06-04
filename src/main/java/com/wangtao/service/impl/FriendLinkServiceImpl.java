@@ -1,14 +1,15 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.FriendLinkMapper;
-import com.zhy.model.FriendLink;
-import com.zhy.model.Result;
-import com.zhy.service.FriendLinkService;
-import com.zhy.utils.ResultUtil;
+import com.wangtao.mapper.FriendLinkMapper;
+import com.wangtao.model.FriendLink;
+import com.wangtao.model.Result;
+import com.wangtao.service.FriendLinkService;
+import com.wangtao.util.ResultUtil;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ import java.util.List;
 @Service
 public class FriendLinkServiceImpl implements FriendLinkService {
 
-    @Autowired
+    @Resource
     FriendLinkMapper friendLinkMapper;
 
     @Override

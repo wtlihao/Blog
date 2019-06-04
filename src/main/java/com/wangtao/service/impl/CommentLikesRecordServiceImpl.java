@@ -1,11 +1,13 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.CommentLikesMapper;
-import com.zhy.model.CommentLikesRecord;
-import com.zhy.service.CommentLikesRecordService;
-import com.zhy.service.UserService;
+import com.wangtao.mapper.CommentLikesMapper;
+import com.wangtao.model.CommentLikesRecord;
+import com.wangtao.service.CommentLikesRecordService;
+import com.wangtao.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author: zhangocean
@@ -15,9 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommentLikesRecordServiceImpl implements CommentLikesRecordService {
 
-    @Autowired
+    @Resource
     CommentLikesMapper commentLikesMapper;
-    @Autowired
+    @Resource
     UserService userService;
 
     @Override

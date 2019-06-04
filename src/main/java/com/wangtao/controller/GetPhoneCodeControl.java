@@ -1,19 +1,13 @@
 package com.wangtao.controller;
 
-import com.aliyuncs.DefaultAcsClient;
-import com.aliyuncs.IAcsClient;
-import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;
-import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
-import com.zhy.component.PhoneRandomBuilder;
-import com.zhy.redis.StringRedisServiceImpl;
+import com.wangtao.bean.PhoneRandomBuilder;
+import com.wangtao.redis.StringRedisServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -24,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class GetPhoneCodeControl {
 
-    @Autowired
+    @Resource
     StringRedisServiceImpl stringRedisService;
 
     private static final String REGISTER = "register";
@@ -52,17 +46,17 @@ public class GetPhoneCodeControl {
             msgCode = "SMS_139982667";
         }
 
-        SendSmsResponse sendSmsResponse = null;
+        /*SendSmsResponse sendSmsResponse = null;
         try {
             sendSmsResponse = sendSmsResponse(phone, trueMsgCode, msgCode);
         } catch (ClientException e) {
             e.printStackTrace();
             return 0;
-        }
+        }*/
 
         return 1;
     }
-
+    /*
     public static SendSmsResponse sendSmsResponse(String phoneNumber, String code, String msgCode) throws ClientException {
 
         //可自助调整超时时间
@@ -84,7 +78,7 @@ public class GetPhoneCodeControl {
         SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
 
         return sendSmsResponse;
-    }
+    }*/
 
 
 

@@ -1,12 +1,12 @@
 package com.wangtao.service;
 
-import com.zhy.model.UserReadNews;
-import com.zhy.redis.HashRedisServiceImpl;
-import com.zhy.redis.StringRedisServiceImpl;
+import com.wangtao.model.UserReadNews;
+import com.wangtao.redis.HashRedisServiceImpl;
+import com.wangtao.redis.StringRedisServiceImpl;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.LinkedHashMap;
 
 /**
@@ -17,11 +17,11 @@ import java.util.LinkedHashMap;
 @Service
 public class RedisService {
 
-    @Autowired
+    @Resource
     StringRedisServiceImpl stringRedisServiceImpl;
-    @Autowired
+    @Resource
     HashRedisServiceImpl hashRedisServiceImpl;
-    @Autowired
+    @Resource
     UserService userService;
 
     /**

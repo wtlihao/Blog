@@ -1,14 +1,14 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.ArchiveMapper;
-import com.zhy.service.ArchiveService;
-import com.zhy.service.ArticleService;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.mapper.ArchiveMapper;
+import com.wangtao.service.ArchiveService;
+import com.wangtao.service.ArticleService;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,9 +19,9 @@ import java.util.List;
 @Service
 public class ArchiveServiceImpl implements ArchiveService {
 
-    @Autowired
+    @Resource
     ArchiveMapper archiveMapper;
-    @Autowired
+    @Resource
     ArticleService articleService;
 
     @Override

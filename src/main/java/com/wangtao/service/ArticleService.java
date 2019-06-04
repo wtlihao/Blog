@@ -1,6 +1,6 @@
 package com.wangtao.service;
 
-import com.zhy.model.Article;
+import com.wangtao.model.Article;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.transaction.annotation.Transactional;

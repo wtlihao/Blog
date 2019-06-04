@@ -2,21 +2,22 @@ package com.wangtao.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhy.component.JavaScriptCheck;
-import com.zhy.constant.SiteOwner;
-import com.zhy.mapper.LeaveMessageMapper;
-import com.zhy.model.LeaveMessage;
-import com.zhy.model.UserReadNews;
-import com.zhy.redis.HashRedisServiceImpl;
-import com.zhy.service.LeaveMessageLikesRecordService;
-import com.zhy.service.LeaveMessageService;
-import com.zhy.service.UserService;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.bean.JavaScriptCheck;
+import com.wangtao.constant.SiteOwner;
+import com.wangtao.mapper.LeaveMessageMapper;
+import com.wangtao.model.LeaveMessage;
+import com.wangtao.model.UserReadNews;
+import com.wangtao.redis.HashRedisServiceImpl;
+import com.wangtao.service.LeaveMessageLikesRecordService;
+import com.wangtao.service.LeaveMessageService;
+import com.wangtao.service.UserService;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -27,13 +28,13 @@ import java.util.List;
 @Service
 public class LeaveMessageServiceImpl implements LeaveMessageService {
 
-    @Autowired
+    @Resource
     LeaveMessageMapper leaveMessageMapper;
-    @Autowired
+    @Resource
     LeaveMessageLikesRecordService leaveMessageLikesRecordService;
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     HashRedisServiceImpl hashRedisServiceImpl;
 
     @Override

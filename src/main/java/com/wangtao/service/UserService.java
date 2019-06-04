@@ -1,6 +1,6 @@
 package com.wangtao.service;
 
-import com.zhy.model.User;
+import com.wangtao.model.User;
 import net.sf.json.JSONObject;
 import org.springframework.transaction.annotation.Transactional;
 

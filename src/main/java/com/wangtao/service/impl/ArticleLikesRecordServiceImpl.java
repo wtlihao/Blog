@@ -2,17 +2,18 @@ package com.wangtao.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhy.mapper.ArticleLikesMapper;
-import com.zhy.model.ArticleLikesRecord;
-import com.zhy.redis.StringRedisServiceImpl;
-import com.zhy.service.ArticleLikesRecordService;
-import com.zhy.service.ArticleService;
-import com.zhy.service.UserService;
+import com.wangtao.mapper.ArticleLikesMapper;
+import com.wangtao.model.ArticleLikesRecord;
+import com.wangtao.redis.StringRedisServiceImpl;
+import com.wangtao.service.ArticleLikesRecordService;
+import com.wangtao.service.ArticleService;
+import com.wangtao.service.UserService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,13 +24,13 @@ import java.util.List;
 @Service
 public class ArticleLikesRecordServiceImpl implements ArticleLikesRecordService {
 
-    @Autowired
+    @Resource
     ArticleLikesMapper articleLikesMapper;
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     ArticleService articleService;
-    @Autowired
+    @Resource
     StringRedisServiceImpl stringRedisService;
 
     @Override

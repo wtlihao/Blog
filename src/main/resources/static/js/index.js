@@ -3,7 +3,7 @@
     var siteLastUpdateTime = '2019年05月23日13点';
 
     //网站开始时间
-    var siteBeginRunningTime = '2018-07-25 20:00:00';
+    var siteBeginRunningTime = '2019-06-04 12:00:00';
 
     // 广告上下滚动
     function getStyle(obj,name){
@@ -297,8 +297,8 @@
 
     //点击扫描二维码时获取二维码图片
     $('.myCardBtn').click(function () {
-        $('.qq_code').attr("src","https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/qq_code.png");
-        $('.weixin_code').attr("src","https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/weixin_code.png");
+        $('.qq_code').attr("src","/img/qq.png");
+        $('.weixin_code').attr("src","/img/wechat.png");
     });
 
     ajaxFirst(1);

@@ -1,14 +1,14 @@
 package com.wangtao.service.impl;
 
-import com.zhy.constant.RoleConstant;
-import com.zhy.mapper.UserMapper;
-import com.zhy.model.User;
-import com.zhy.service.UserService;
+import com.wangtao.constant.RoleConstant;
+import com.wangtao.mapper.UserMapper;
+import com.wangtao.model.User;
+import com.wangtao.service.UserService;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     UserMapper userMapper;
 
     @Override

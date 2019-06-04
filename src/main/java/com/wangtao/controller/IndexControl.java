@@ -1,17 +1,17 @@
 package com.wangtao.controller;
 
-import com.zhy.model.FeedBack;
-import com.zhy.model.Result;
-import com.zhy.service.*;
+import com.wangtao.model.FeedBack;
+import com.wangtao.model.Result;
+import com.wangtao.service.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.security.Principal;
@@ -24,21 +24,21 @@ import java.security.Principal;
 @RestController
 public class IndexControl {
 
-    @Autowired
+    @Resource
     VisitorService visitorService;
-    @Autowired
+    @Resource
     ArticleService articleService;
-    @Autowired
+    @Resource
     CommentService commentService;
-    @Autowired
+    @Resource
     TagService tagService;
-    @Autowired
+    @Resource
     CategoryService categoryService;
-    @Autowired
+    @Resource
     FeedBackService feedBackService;
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     LeaveMessageService leaveMessageService;
 
     /**
@@ -47,7 +47,7 @@ public class IndexControl {
      */
     @GetMapping("/getVisitorNumByPageName")
     public Result getVisitorNumByPageName(HttpServletRequest request,
-                                   @RequestParam("pageName") String pageName) throws UnsupportedEncodingException {
+                                          @RequestParam("pageName") String pageName) throws UnsupportedEncodingException {
 
         int index = pageName.indexOf("/");
         if(index == -1){

@@ -1,17 +1,17 @@
 package com.wangtao.controller;
 
-import com.zhy.model.User;
-import com.zhy.service.*;
-import com.zhy.utils.FileUtil;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.model.User;
+import com.wangtao.service.*;
+import com.wangtao.util.FileUtil;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.security.Principal;
@@ -27,15 +27,15 @@ public class UserControl {
 
     private Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     CommentService commentService;
-    @Autowired
+    @Resource
     LeaveMessageService leaveMessageService;
-    @Autowired
+    @Resource
     PrivateWordService privateWordService;
-    @Autowired
+    @Resource
     RedisService redisService;
 
     /**
@@ -66,9 +66,9 @@ public class UserControl {
             String filePath = this.getClass().getResource("/").getPath().substring(1) + "userImg/";
             TimeUtil timeUtil = new TimeUtil();
             File file = fileUtil.base64ToFile(filePath, img, timeUtil.getLongTime() + strFileExtendName);
-            String url = fileUtil.uploadFile(file, "user/avatar/" + username);
+            //String url = fileUtil.uploadFile(file, "user/avatar/" + username);
             int userId = userService.findIdByUsername(username);
-            userService.updateAvatarImgUrlById(url, userId);
+            userService.updateAvatarImgUrlById("", userId);
             jsonObject = userService.getHeadPortraitUrl(userId);
         } catch (Exception e){
             e.printStackTrace();

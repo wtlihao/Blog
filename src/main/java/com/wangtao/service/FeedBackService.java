@@ -1,6 +1,6 @@
 package com.wangtao.service;
 
-import com.zhy.model.FeedBack;
+import com.wangtao.model.FeedBack;
 import net.sf.json.JSONObject;
 import org.springframework.transaction.annotation.Transactional;
 

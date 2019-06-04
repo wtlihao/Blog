@@ -1,6 +1,7 @@
 package com.wangtao.service;
 
-import com.zhy.model.LeaveMessageLikesRecord;
+
+import com.wangtao.model.LeaveMessageLikesRecord;
 
 /**
  * @author: zhangocean

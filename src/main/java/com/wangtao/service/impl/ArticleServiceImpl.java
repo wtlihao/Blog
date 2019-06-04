@@ -2,19 +2,19 @@ package com.wangtao.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zhy.component.StringAndArray;
-import com.zhy.constant.SiteOwner;
-import com.zhy.mapper.ArticleMapper;
-import com.zhy.model.Article;
-import com.zhy.service.*;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.bean.StringAndArray;
+import com.wangtao.constant.SiteOwner;
+import com.wangtao.mapper.ArticleMapper;
+import com.wangtao.model.Article;
+import com.wangtao.service.*;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,19 +30,19 @@ public class ArticleServiceImpl implements ArticleService {
 
     private Logger logger = LoggerFactory.getLogger(ArticleServiceImpl.class);
 
-    @Autowired
+    @Resource
     private ArticleMapper articleMapper;
-    @Autowired
+    @Resource
     private ArticleService articleService;
-    @Autowired
+    @Resource
     private ArticleLikesRecordService articleLikesRecordService;
-    @Autowired
+    @Resource
     private VisitorService visitorService;
-    @Autowired
+    @Resource
     private ArchiveService archiveService;
-    @Autowired
+    @Resource
     private CommentService commentService;
-    @Autowired
+    @Resource
     private CommentLikesRecordService commentLikesRecordService;
 
     @Override

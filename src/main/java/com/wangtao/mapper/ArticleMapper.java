@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.Article;
+import com.wangtao.model.Article;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

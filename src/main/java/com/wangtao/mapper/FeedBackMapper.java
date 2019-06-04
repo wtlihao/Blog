@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.FeedBack;
+import com.wangtao.model.FeedBack;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

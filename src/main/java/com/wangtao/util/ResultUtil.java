@@ -1,6 +1,7 @@
 package com.wangtao.util;
 
-import com.zhy.model.Result;
+
+import com.wangtao.model.Result;
 
 /**
  * @author: zhangocean

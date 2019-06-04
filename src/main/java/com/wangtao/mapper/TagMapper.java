@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.Tag;
+import com.wangtao.model.Tag;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

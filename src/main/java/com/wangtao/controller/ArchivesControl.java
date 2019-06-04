@@ -1,14 +1,14 @@
 package com.wangtao.controller;
 
-import com.zhy.service.ArchiveService;
-import com.zhy.service.ArticleService;
-import com.zhy.utils.TransCodingUtil;
+import com.wangtao.service.ArchiveService;
+import com.wangtao.service.ArticleService;
+import com.wangtao.util.TransCodingUtil;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -19,9 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class ArchivesControl {
 
-    @Autowired
+    @Resource
     ArchiveService archiveService;
-    @Autowired
+    @Resource
     ArticleService articleService;
 
     /**

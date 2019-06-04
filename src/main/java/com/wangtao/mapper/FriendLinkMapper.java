@@ -1,6 +1,6 @@
 package com.wangtao.mapper;
 
-import com.zhy.model.FriendLink;
+import com.wangtao.model.FriendLink;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.mapping.StatementType;
 import org.springframework.stereotype.Repository;
@@ -19,7 +19,6 @@ public interface FriendLinkMapper {
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, statementType = StatementType.STATEMENT,resultType=int.class)
     @Insert("insert into friendlink(blogger,url) values(#{blogger},#{url})")
     int addFriendLink(FriendLink friendLink);
-
     @Update("update friendlink set blogger=#{friendLink.blogger},url=#{friendLink.url} where id=#{id}")
     void updateFriendLink(@Param("friendLink") FriendLink friendLink, @Param("id") int id);
 

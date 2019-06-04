@@ -1,6 +1,7 @@
 package com.wangtao.service;
 
-import com.zhy.model.Result;
+
+import com.wangtao.model.Result;
 
 import javax.servlet.http.HttpServletRequest;
 

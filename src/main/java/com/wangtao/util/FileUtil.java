@@ -1,7 +1,5 @@
 package com.wangtao.util;
 
-import com.aliyun.oss.OSSClient;
-import com.zhy.constant.OSSClientConstants;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
@@ -18,7 +16,7 @@ public class FileUtil {
      * 上传文件到阿里云OSS
      * @param file 文件流
      * @return 返回文件URL
-     */
+
     public String uploadFile(File file, String subCatalog){
 
         //初始化OSSClient
@@ -36,7 +34,7 @@ public class FileUtil {
 
         return picUrl;
 
-    }
+    }*/
 
     /**
      * base64字符转换成file

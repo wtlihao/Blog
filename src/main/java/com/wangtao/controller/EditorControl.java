@@ -1,24 +1,24 @@
 package com.wangtao.controller;
 
-import com.zhy.component.StringAndArray;
-import com.zhy.model.Article;
-import com.zhy.service.ArticleService;
-import com.zhy.service.CategoryService;
-import com.zhy.service.TagService;
-import com.zhy.service.UserService;
-import com.zhy.utils.BuildArticleTabloidUtil;
-import com.zhy.utils.FileUtil;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.bean.StringAndArray;
+import com.wangtao.model.Article;
+import com.wangtao.service.ArticleService;
+import com.wangtao.service.CategoryService;
+import com.wangtao.service.TagService;
+import com.wangtao.service.UserService;
+import com.wangtao.util.BuildArticleTabloidUtil;
+import com.wangtao.util.FileUtil;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -37,13 +37,13 @@ public class EditorControl {
 
     private Logger logger = LoggerFactory.getLogger(EditorControl.class);
 
-    @Autowired
+    @Resource
     ArticleService articleService;
-    @Autowired
+    @Resource
     UserService userService;
-    @Autowired
+    @Resource
     TagService tagService;
-    @Autowired
+    @Resource
     CategoryService categoryService;
 
     /**
@@ -208,11 +208,11 @@ public class EditorControl {
             String fileName = timeUtil.getLongTime() + "." + fileExtension;
 
             String subCatalog = "blogArticles/" + new TimeUtil().getFormatDateForThree();
-            String fileUrl = fileUtil.uploadFile(fileUtil.multipartFileToFile(file, filePath, fileName), subCatalog);
+            //String fileUrl = fileUtil.uploadFile(fileUtil.multipartFileToFile(file, filePath, fileName), subCatalog);
 
             resultMap.put("success", 1);
             resultMap.put("message", "上传成功");
-            resultMap.put("url", fileUrl);
+            resultMap.put("url", "");
         } catch (Exception e) {
             try {
                 response.getWriter().write( "{\"success\":0}" );

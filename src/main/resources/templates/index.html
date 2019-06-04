@@ -3,14 +3,14 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
-    <title>程序猿张先森</title>
+    <title>死磕Java的王工</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <meta name="keywords" content="博客,个人,学习,IT,生活,张海洋,程序猿,springboot,java,后端">
-    <meta name="description" content="张海洋，正宗97后，爱编程。喜欢旅行、摄影、爱生活。专注于Spring,SpringBoot等后端技术探索，以及MySql,Oracle数据库开发和SSM,SSH等后端流行框架学习。">
+    <meta name="keywords" content="博客,个人,学习,IT,生活,王涛,程序猿,springboot,java,后端">
+    <meta name="description" content="王涛，正宗96后，爱编程。喜欢旅行、摄影、爱生活。专注于Spring,SpringBoot等后端技术探索，以及MySql,Oracle数据库开发和SSM,SSH等后端流行框架学习。">
 
-    <link rel="icon" type="image/x-icon" href="https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" th:href="@{/img/blogger.png}">
     <link href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
     <link href="https://lib.baomitu.com/font-awesome/5.8.0/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.css">
@@ -29,7 +29,7 @@
     <div class="header">
         <div class="am-topbar" style="margin-bottom: 0">
             <h1 class="am-topbar-brand">
-                <a href="/" class="blogTitleName"><img src="https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/zhy.png" class="imgStyle">程序猿张先森</a>
+                <a href="/" class="blogTitleName"><img th:src="@{/img/blogger.png}" class="imgStyle">死磕 Java-Mr.Wang</a>
             </h1>
             <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" style="background-color: #CCCCCC;border-color: white;border-radius: 6px" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
@@ -41,14 +41,14 @@
                             <img src="https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/weixin.jpg">
                         </div>
                         <div class="personal-card-show-name">
-                            <h4 style="font-weight: 500">张海洋</h4>
+                            <h4 style="font-weight: 500">王涛</h4>
                         </div>
                         <div class="personal-card-show-words">
                             <small style="font-size: 13px;color: #808080ad;">多年以后，愿你的城市，有清风，有烈酒，也有人是你的归途。</small>
                         </div>
                         <div class="personal-card-show-connection" style="margin-top: 10px">
-                            <span style="color: #009688">微信：zhy1125694337</span><br>
-                            <span style="color: #009688">QQ：1125694337</span><br>
+                            <span style="color: #009688">微信：taotao28278</span><br>
+                            <span style="color: #009688">QQ：505639213</span><br>
                         </div>
                         <div class="personal-card-show-attention_btn">
                             <button class="myCardBtn am-btn am-btn-secondary am-round attention_btn" data-am-offcanvas="{target: '#doc-oc-demo1'}" style="margin-top: 10px">扫描二维码关注我</button>
@@ -80,11 +80,11 @@
                                     <div class="zhy-qq-weixin">
                                         <div class="zhy-qq-box">
                                             <p>QQ</p>
-                                            <img src=""  class="qq_code am-img-thumbnail am-radius">
+                                            <img th:src="@{/img/qq.png}"  class="qq_code am-img-thumbnail am-radius">
                                         </div>
                                         <div class="zhy-weixin-box">
                                             <p>微信</p>
-                                            <img src=""  class="weixin_code am-img-thumbnail am-radius">
+                                            <img th:src="@{/img/wechat.png}"  class="weixin_code am-img-thumbnail am-radius">
                                         </div>
                                     </div>
                                 </div>
@@ -175,15 +175,15 @@
                             </div>
                             <div class="am-u-sm-7" style="padding: 0 20px 0 0;">
                                 <div class="img-words">
-                                    <h3 id="name">张海洋</h3>
+                                    <h3 id="name">王涛</h3>
                                     <small style="font-size: 13px;color: #808080ad">多年以后，愿你的城市，有清风，有烈酒，也有人是你的归途。</small>
                                 </div>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <div id="connection" style="font-size: 14px">
-                            <span style="color: #009688">微信：zhy1125694337</span><br>
-                            <span style="color: #009688">QQ：1125694337</span><br>
+                            <span style="color: #009688">微信：taotao28278</span><br>
+                            <span style="color: #009688">QQ：505639213</span><br>
                             <div id="follow">
                                 <button class="myCardBtn am-btn am-btn-secondary am-round attention_btn" data-am-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">扫描二维码关注我</button>
                             </div>
@@ -522,7 +522,7 @@
                                     <p>我喜欢就好</p>
                                     <p>我没有很好</p>
                                     <p>你不嫌弃就好</p>
-                                    <p style="text-align: right;padding-top: 10px">--- zhy</p>
+                                    <p style="text-align: right;padding-top: 10px">--- wangtao</p>
                                 </div>
                                 <i class="am-icon-quote-right" style="float: right"></i>
                                 <div class="zhy-info-opinion">
@@ -536,7 +536,7 @@
                         <div class="bg-myStory">
                             <div><a class="bg-myStory-a" href="/mystory">我的故事</a></div>
                         </div>
-                        <div class="myStory-words">一盆小花，一杯清茶</div>
+                        <div class="myStory-words">一清茶，一浊酒</div>
                     </div>
                     <div class="myStory" >
                         <div class="bg-myGirl">

@@ -1,7 +1,7 @@
 package com.wangtao.controller;
 
-import com.zhy.service.ArticleService;
-import com.zhy.utils.TransCodingUtil;
+import com.wangtao.service.ArticleService;
+import com.wangtao.util.TransCodingUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
@@ -23,7 +24,7 @@ import java.util.Map;
 @Controller
 public class BackControl {
 
-    @Autowired
+    @Resource
     ArticleService articleService;
 
 
@@ -227,7 +228,7 @@ public class BackControl {
 
         String tag = request.getParameter("tag");
         try {
-            response.setHeader("tag",TransCodingUtil.stringToUnicode(tag));
+            response.setHeader("tag", TransCodingUtil.stringToUnicode(tag));
         } catch (Exception e){
         }
         return "tags";

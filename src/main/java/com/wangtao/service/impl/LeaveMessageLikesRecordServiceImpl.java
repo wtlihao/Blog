@@ -1,8 +1,8 @@
 package com.wangtao.service.impl;
 
-import com.zhy.mapper.LeaveMessageLikesRecordMapper;
-import com.zhy.model.LeaveMessageLikesRecord;
-import com.zhy.service.LeaveMessageLikesRecordService;
+import com.wangtao.mapper.LeaveMessageLikesRecordMapper;
+import com.wangtao.model.LeaveMessageLikesRecord;
+import com.wangtao.service.LeaveMessageLikesRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

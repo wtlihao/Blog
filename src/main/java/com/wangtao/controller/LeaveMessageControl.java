@@ -1,22 +1,22 @@
 package com.wangtao.controller;
 
-import com.zhy.component.JavaScriptCheck;
-import com.zhy.model.LeaveMessage;
-import com.zhy.model.LeaveMessageLikesRecord;
-import com.zhy.service.LeaveMessageLikesRecordService;
-import com.zhy.service.LeaveMessageService;
-import com.zhy.service.UserService;
-import com.zhy.utils.TimeUtil;
+import com.wangtao.bean.JavaScriptCheck;
+import com.wangtao.model.LeaveMessage;
+import com.wangtao.model.LeaveMessageLikesRecord;
+import com.wangtao.service.LeaveMessageLikesRecordService;
+import com.wangtao.service.LeaveMessageService;
+import com.wangtao.service.UserService;
+import com.wangtao.util.TimeUtil;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 
 /**
@@ -29,11 +29,11 @@ public class LeaveMessageControl {
 
     private Logger logger = LoggerFactory.getLogger(LeaveMessageControl.class);
 
-    @Autowired
+    @Resource
     LeaveMessageService leaveMessageService;
-    @Autowired
+    @Resource
     LeaveMessageLikesRecordService leaveMessageLikesRecordService;
-    @Autowired
+    @Resource
     UserService userService;
 
     /**

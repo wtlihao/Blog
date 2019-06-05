@@ -24,7 +24,7 @@ public interface ArticleLikesMapper {
     @Delete("delete from article_likes_record where articleId=#{articleId}")
     void deleteArticleLikesRecordByArticleId(long articleId);
 
-    @Select("select * from article_likes_record where likerId<>#{likerId} order by id desc")
+    @Select("select * from article_likes_record where likerId=#{likerId} order by id desc")
     List<ArticleLikesRecord> getArticleThumbsUp(int likerId);
 
     @Select("select count(*) from article_likes_record where isRead=1")

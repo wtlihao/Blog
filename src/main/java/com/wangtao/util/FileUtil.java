@@ -1,8 +1,15 @@
 package com.wangtao.util;
 
+import com.qcloud.cos.COSClient;
+import com.qcloud.cos.ClientConfig;
+import com.qcloud.cos.auth.BasicCOSCredentials;
+import com.qcloud.cos.auth.COSCredentials;
+import com.qcloud.cos.model.PutObjectRequest;
+import com.qcloud.cos.region.Region;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.Base64;
 
 /**
@@ -13,20 +20,22 @@ import java.util.Base64;
 public class FileUtil {
 
     /**
-     * 上传文件到阿里云OSS
+     * 上传文件到腾讯云OSS
      * @param file 文件流
      * @return 返回文件URL
-
+    */
     public String uploadFile(File file, String subCatalog){
 
         //初始化OSSClient
-        OSSClient ossClient = AliYunOSSClientUtil.getOSSClient();
-
-        String md5Key = AliYunOSSClientUtil.uploadObject2OSS(ossClient, file, OSSClientConstants.BACKET_NAME,
-                OSSClientConstants.FOLDER + subCatalog + "/");
-        String url = AliYunOSSClientUtil.getUrl(ossClient, md5Key);
-        String picUrl = "https://" + OSSClientConstants.BACKET_NAME + "." + OSSClientConstants.ENDPOINT +
-                "/" + OSSClientConstants.FOLDER + subCatalog + "/" + file.getName();
+        COSClient cosClient = getCosClient();
+        // 指定存储桶
+        String bucketName = "myblog-1257039620";
+        // 生成key
+        String key = subCatalog+"/"+file.getName();
+        PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName,key,file);
+        // 上传
+        cosClient.putObject(putObjectRequest);
+        String picUrl = "https://" + bucketName + "." + "cos.ap-chengdou.myqcloud.com"+ "/" + key;
 
         //删除临时生成的文件
         File deleteFile = new File(file.toURI());
@@ -34,7 +43,20 @@ public class FileUtil {
 
         return picUrl;
 
-    }*/
+    }
+
+    private COSClient getCosClient(){
+        // 1 初始化用户身份信息（secretId, secretKey）。
+        String secretId = "AKIDf9RYUy0p6B5oeJSCTdcOzKl6sTwJmO9k";
+        String secretKey = "azIQSq3G3X8iCYjiHcqwuhJmFdu0udhy";
+        COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+        // 2 设置 bucket 的区域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+        // clientConfig 中包含了设置 region, https(默认 http), 超时, 代理等 set 方法, 使用可参见源码或者常见问题 Java SDK 部分。
+        Region region = new Region("ap-chengdu");
+        ClientConfig clientConfig = new ClientConfig(region);
+        // 3 生成 cos 客户端。
+        return new COSClient(cred, clientConfig);
+    }
 
     /**
      * base64字符转换成file

@@ -133,7 +133,7 @@ $('#sidebar_toggle').click(function () {
         error:function () {
         }
     });
-    $('.weixinPublic').attr("src","https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/weixin.jpg");
+    $('.weixinPublic').attr("src","/img/wechat.png");
 });
 
 //获得登录用户未读消息

@@ -208,11 +208,11 @@ public class EditorControl {
             String fileName = timeUtil.getLongTime() + "." + fileExtension;
 
             String subCatalog = "blogArticles/" + new TimeUtil().getFormatDateForThree();
-            //String fileUrl = fileUtil.uploadFile(fileUtil.multipartFileToFile(file, filePath, fileName), subCatalog);
+            String fileUrl = fileUtil.uploadFile(fileUtil.multipartFileToFile(file, filePath, fileName), subCatalog);
 
             resultMap.put("success", 1);
             resultMap.put("message", "上传成功");
-            resultMap.put("url", "");
+            resultMap.put("url", fileUrl);
         } catch (Exception e) {
             try {
                 response.getWriter().write( "{\"success\":0}" );

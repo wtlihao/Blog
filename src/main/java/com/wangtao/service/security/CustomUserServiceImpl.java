@@ -5,6 +5,7 @@ import com.wangtao.model.Role;
 import com.wangtao.model.User;
 import com.wangtao.service.UserService;
 import com.wangtao.util.TimeUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,6 +22,7 @@ import java.util.List;
  * Describe: 用户登录处理
  */
 @Service
+@Slf4j
 public class CustomUserServiceImpl implements UserDetailsService{
 
     @Resource
@@ -30,7 +32,6 @@ public class CustomUserServiceImpl implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String phone) throws UsernameNotFoundException {
-
         User user = userMapper.getUsernameAndRolesByPhone(phone);
 
         if(user == null){

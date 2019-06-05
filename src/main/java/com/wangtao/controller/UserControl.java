@@ -66,9 +66,9 @@ public class UserControl {
             String filePath = this.getClass().getResource("/").getPath().substring(1) + "userImg/";
             TimeUtil timeUtil = new TimeUtil();
             File file = fileUtil.base64ToFile(filePath, img, timeUtil.getLongTime() + strFileExtendName);
-            //String url = fileUtil.uploadFile(file, "user/avatar/" + username);
+            String url = fileUtil.uploadFile(file, "user/avatar");
             int userId = userService.findIdByUsername(username);
-            userService.updateAvatarImgUrlById("", userId);
+            userService.updateAvatarImgUrlById(url, userId);
             jsonObject = userService.getHeadPortraitUrl(userId);
         } catch (Exception e){
             e.printStackTrace();

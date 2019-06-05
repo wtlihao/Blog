@@ -6,7 +6,7 @@
         <div class="header">
             <div class="am-topbar" style="margin-bottom: 0">
                 <h1 class="am-topbar-brand">
-                    <a href="/" class="blogTitleName"><img src="https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/zhy.png" class="imgStyle">程序猿张先森</a>
+                    <a href="/" class="blogTitleName"><img th:src="@{/img/blogger.png}" class="imgStyle">死磕 Java-Mr.Wang</a>
                 </h1>
 
                 <!--手机适配导航显示按钮-->
@@ -36,9 +36,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
+                    <!--<div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
                         <a href="/register" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">注册</a>
-                    </div>
+                    </div>-->
                     <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
                         <a href="/login" class="loginBtn am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">登录</a>
                     </div>

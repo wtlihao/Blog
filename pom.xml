@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.wangtao</groupId>
     <artifactId>blog</artifactId>
-    <name>王涛的个人博客</name>
+    <name>blog</name>
     <description>blog-记录</description>
     <version>1.0.0</version>
 

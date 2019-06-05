@@ -35,7 +35,7 @@ public class FileUtil {
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName,key,file);
         // 上传
         cosClient.putObject(putObjectRequest);
-        String picUrl = "https://" + bucketName + "." + "cos.ap-chengdou.myqcloud.com"+ "/" + key;
+        String picUrl = "https://" + bucketName + "." + "cos.ap-chengdu.myqcloud.com"+ "/" + key;
 
         //删除临时生成的文件
         File deleteFile = new File(file.toURI());

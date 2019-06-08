@@ -117,7 +117,6 @@
             if(!$(this).hasClass("emoji")){
                 var a=$(this).attr('src');
                 $(this).attr("data-src",a);
-
                 $(this).addClass("enlargePicture");
             }
         });

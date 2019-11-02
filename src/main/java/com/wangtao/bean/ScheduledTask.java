@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 public class ScheduledTask {
 
     @Resource
-    HashRedisServiceImpl hashRedisService;
+    HashRedisServiceImpl hashRedisServiceImpl;
     @Resource
     VisitorService visitorService;
 
@@ -29,21 +29,21 @@ public class ScheduledTask {
     @Scheduled(cron = "0 0 0 * * ? ")
     public void resetVisitorNumber(){
         long oldTotalVisitor = visitorService.getTotalVisitor();
-        long newTotalVisitor = Long.valueOf(hashRedisService.get("visitor", "totalVisitor").toString());
+        long newTotalVisitor = Long.valueOf(hashRedisServiceImpl.get("visitor", "totalVisitor").toString());
         long yesterdayVisitor = newTotalVisitor - oldTotalVisitor;
-        if(hashRedisService.hasHashKey("visitor", "yesterdayVisitor")){
-            hashRedisService.put("visitor", "yesterdayVisitor", yesterdayVisitor);
+        if(hashRedisServiceImpl.hasHashKey("visitor", "yesterdayVisitor")){
+            hashRedisServiceImpl.put("visitor", "yesterdayVisitor", yesterdayVisitor);
         } else {
-            hashRedisService.put("visitor", "yesterdayVisitor", oldTotalVisitor);
+            hashRedisServiceImpl.put("visitor", "yesterdayVisitor", oldTotalVisitor);
         }
         //将redis中的所有访客记录更新到数据库中
-        LinkedHashMap map = (LinkedHashMap) hashRedisService.getAllFieldAndValue("visitor");
+        LinkedHashMap map = (LinkedHashMap) hashRedisServiceImpl.getAllFieldAndValue("visitor");
         String pageName;
         for(Object e : map.keySet()){
             pageName = String.valueOf(e);
             visitorService.updateVisitorNumByPageName(pageName, String.valueOf(map.get(e)));
             if(!"totalVisitor".equals(pageName) && !"visitorVolume".equals(pageName) && !"yesterdayVisitor".equals(pageName)){
-                hashRedisService.hashDelete("visitor", pageName);
+                hashRedisServiceImpl.hashDelete("visitor", pageName);
             }
         }
     }

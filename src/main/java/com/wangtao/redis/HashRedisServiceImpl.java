@@ -1,10 +1,10 @@
 package com.wangtao.redis;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Field;
 
 /**
@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 @Service
 public class HashRedisServiceImpl implements RedisService{
 
-    @Autowired
+    @Resource
     private RedisTemplate<String,Object> redisTemplate;
 
     /**
